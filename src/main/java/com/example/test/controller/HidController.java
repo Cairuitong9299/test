@@ -102,6 +102,7 @@ public class HidController {
     }
 
     //批量
+    @RequestMapping(value = "/mapping_batch/{sourceType}/{targetType}/pair", method = RequestMethod.POST)
     public Response<Set<Pair<String, Set<String>>>> batchMappingPair(@PathVariable("sourceType") String sourceType,
                                                                      @PathVariable("targetType") String targetType,
                                                                      @RequestParam("bizName") String bizName,
@@ -205,18 +206,20 @@ public class HidController {
                 throw new ServiceException(String.format("%s|%s|%s|", Constant.CODE_BATCH_SIZE_INVALID_MSG, bizName, size));
             }
 
+            //拿到一个线程池
             CompletionService<Pair<String, Set<String>>> completionService = new ExecutorCompletionService<>(ExecutorServiceUtils.INSTANCE.getExecutorService());
             //迭代器
             Iterator iterator = jsonArray.iterator();
 
+            //判断迭代器的下一位是否有值
             while (iterator.hasNext()) {
-                //取代值
+                //取值
                 String sourceValue = iterator.next().toString();
-                //判断是否已经包含了该值
+                //判断该值是否存在
                 if (!exists.contains(sourceValue)) {
                     //添加到exists集合中去
                     exists.add(sourceValue);
-                    //
+                    //进行查询判断非空进行存储
                     completionService.submit(() -> {
                         Set<String> stringSet = doMapping(sourceType, sourceValue, targetType, bizName, isMultipleId);
                         if (stringSet != null && stringSet.size() != 0) {
@@ -226,10 +229,13 @@ public class HidController {
                     });
                 }
             }
+
             for (int i = 0; i < exists.size(); i++) {
                 try {
+                    //取出结果
                     Future<Pair<String, Set<String>>> future = completionService.take();
                     Pair<String, Set<String>> stringSetPair = future.get();
+                    //判断非空添加到targetValues
                     if (stringSetPair != null) {
                         targetValues.add(stringSetPair);
                     }
