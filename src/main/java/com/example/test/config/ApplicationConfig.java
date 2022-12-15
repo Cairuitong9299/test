@@ -20,6 +20,10 @@ import java.util.Set;
 @Component
 public class ApplicationConfig implements InitializingBean {
 
+    public int maxFlow = 1000;
+
+
+
     private Logger logger = LoggerFactory.getLogger(ApplicationConfig.class);
     public static ApplicationConfig INSTANCE;
 
@@ -38,6 +42,13 @@ public class ApplicationConfig implements InitializingBean {
     private String bizNameString = "oppo,idmmaping,soloop,game";
 
     private Set<String> bizNameSet = new HashSet<>();
+    public int getMaxFlow() {
+        return maxFlow;
+    }
+
+    public void setMaxFlow(int maxFlow) {
+        this.maxFlow = maxFlow;
+    }
 
     public boolean isOpenLog() {
         return openLog;
