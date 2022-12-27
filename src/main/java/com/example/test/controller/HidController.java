@@ -7,6 +7,7 @@ import com.bdp.idmapping.core.IdCodeEnum;
 import com.bdp.idmapping.response.Response;
 import com.bdp.idmapping.service.IdMappingService;
 import com.bdp.idmapping.utils.DESTools;
+import com.bdp.idmapping.utils.Ehcahce3Utils;
 import com.bdp.idmapping.utils.UniqueSsoidImeiDataUtil;
 import com.example.test.config.ApplicationConfig;
 import com.example.test.exception.ServiceException;
@@ -15,10 +16,14 @@ import com.example.test.utils.TypeDomain;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
+import org.ehcache.Cache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+
+
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -45,6 +50,7 @@ public class HidController {
     @Autowired
     private ApplicationConfig applicationConfig;
 
+
     @RequestMapping(value = "/mapping/{sourceType}/{targetType}", method = RequestMethod.POST)
     public Response<String> mapping(@PathVariable("sourceType") String sourceType,
                                     @PathVariable("targetType") String targetType,
@@ -52,17 +58,19 @@ public class HidController {
                                     @RequestParam("ts") String ts,
                                     @RequestParam("sign") String sign,
                                     @RequestBody String content) {
+
         try {
+            Response<String> response;
             //判断是否有数据为空 如果有则返回错误
             if (StringUtils.isBlank(sourceType) || StringUtils.isBlank(targetType) || StringUtils.isBlank(bizName)
                     || StringUtils.isBlank(ts) || StringUtils.isBlank(sign) || StringUtils.isBlank(content)) {
                 return Response.fail(Constant.CODE_PARAM_ERROR, Constant.CODE_PARAM_ERROR_MSG);
             }
             //判断请求是否超时 是则返回错误
-            if (isTimeOut(Long.valueOf(ts))) {
+            boolean timeOut = isTimeOut(Long.valueOf(ts));
+            if (timeOut) {
                 return Response.fail(Constant.CODE_TIME_ERROR, Constant.CODE_TIME_ERROR_MSG);
             }
-
 
             TypeDomain typeDomain = new TypeDomain(sourceType, targetType);
             //判断sourceType, targetType是否为有效的参数
@@ -74,26 +82,36 @@ public class HidController {
             //是否为多个ID
             boolean isMultipledId = typeDomain.isMultipledId();
             //判断签名是非一致，不同则返回错误
-            if (!sign.equals(DigestUtils.md5Hex(ts + bizName))) {
+            boolean equals = sign.equals(DigestUtils.md5Hex(ts + bizName));
+            if (!equals) {
                 return Response.fail(Constant.CODE_SIGN_ERROR, Constant.CODE_SIGN_ERROR_MSG);
             }
+
             //解密
             content = decodeDesStr(bizName + ts, content);
             //判断解密的数据是否为空，是则返回错误
             if (StringUtils.isBlank(content)) {
                 return Response.fail(Constant.CODE_PARAM_ERROR, Constant.CODE_PARAM_ERROR_MSG);
             }
+            String cacheKey = sourceType + "_" + content + "_" + targetType;
+
+            Cache<String, String> cache = Ehcahce3Utils.INSTANCE.getCache();
+            String result = cache.get(cacheKey);
+            if (StringUtils.isNotBlank(result)) {
+                response = Response.success(JSON.toJSONString(result), Constant.CODE_SUCCESS, Constant.CODE_SUCCESS_MSG);
+                return response;
+            }
             //取到数据
             Set<String> targetValue = mappingWithTrace(sourceType, content, targetType, bizName, isMultipledId);
             if (applicationConfig.isOpenLog() && targetValue == null) {
                 logger.info("bizName:{} sourceKV:{}:{} targetKV:{}:{}", bizName, sourceType, content, targetType, targetValue);
             }
-            Response<String> response;
             if (targetValue != null && !targetValue.isEmpty()) {
                 response = Response.success(JSON.toJSONString(targetValue), Constant.CODE_SUCCESS, Constant.CODE_SUCCESS_MSG);
             } else {
                 response = Response.fail(Constant.CODE_NOT_EXIST, Constant.CODE_NOT_EXIST_MSG);
             }
+
             return response;
         } catch (Exception e) {
             logger.error("mapping", e);
@@ -110,6 +128,7 @@ public class HidController {
                                                                      @RequestParam("sign") String sign,
                                                                      @RequestBody String content) {
         try {
+
             //判断非空
             if (StringUtils.isBlank(sourceType) || StringUtils.isBlank(targetType) || StringUtils.isBlank(bizName)
                     || StringUtils.isBlank(ts) || StringUtils.isBlank(sign) || StringUtils.isBlank(content)) {
@@ -136,7 +155,6 @@ public class HidController {
             if (StringUtils.isBlank(content)) {
                 return Response.fail(Constant.CODE_PARAM_ERROR, Constant.CODE_PARAM_ERROR_MSG);
             }
-            //
             Set<Pair<String, Set<String>>> targetValue = batchMappingPariWithTrace(sourceType, content, targetType, bizName, isMultipledId);
             if (applicationConfig.isOpenLog() && targetValue == null) {
                 logger.info("bizName:{} sourceKV:{}:{} targetKV:{}:{}", bizName, sourceType, content, targetType, targetValue);
@@ -211,7 +229,7 @@ public class HidController {
             //迭代器
             Iterator iterator = jsonArray.iterator();
 
-            //判断迭代器的下一位是否有值
+            //判断迭代器下一位是否有值
             while (iterator.hasNext()) {
                 //取值
                 String sourceValue = iterator.next().toString();
@@ -250,15 +268,19 @@ public class HidController {
         }
     }
 
-    private Set<String> doMapping(String sourceType, String sourceValue, String targetType, String bizName, boolean isMultipleId) {
+    private Set<String> doMapping(String sourceType, String content, String targetType, String bizName, boolean isMultipleId) {
         try {
             Set<String> res = new HashSet<>();
             //判断sourceType targetType 的类型是否是目标类型 是则进行查询并返回
             if (sourceType.equals(IdCodeEnum.IMEI.getCode()) && targetType.equals(IdCodeEnum.UNIQUE_SSOID.getCode())) {
-                return UniqueSsoidImeiDataUtil.getImeiToSsoidRelation(res, sourceValue);
+                return UniqueSsoidImeiDataUtil.getImeiToSsoidRelation(res, content);
             }
             //查询数据并把数据放到res中并返回
-            res = idMappingService.convertId(sourceType, sourceValue, targetType, bizName, isMultipleId);
+            res = idMappingService.convertId(sourceType, content, targetType, bizName, isMultipleId);
+            String result = res.iterator().next();
+            if (StringUtils.isNotBlank(result)) {
+                Ehcahce3Utils.INSTANCE.getCache().put(sourceType + "_" + content + "_" + targetType, result);
+            }
             return res;
         } catch (Exception e) {
             logger.error("doMapping", e);

@@ -1,11 +1,13 @@
 package com.example.test;
 
+import com.bdp.idmapping.utils.Ehcahce3Utils;
 import com.example.test.filter.AuthenticationFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -18,17 +20,21 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableAsync
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = {"com.example.test", "com.bdp.idmapping"})
+@EnableCaching
 public class Application {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
     @Bean
-    AuthenticationFilter intiFilter() {return new AuthenticationFilter();}
+    AuthenticationFilter intiFilter() {
+        return new AuthenticationFilter();
+    }
 
     public static void main(String[] args) {
         try {
             logger.info("starting");
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                Ehcahce3Utils.INSTANCE.getCacheManager().close();
                 logger.info("Server Shutting Down...");
             }, "shut-dowm"));
             SpringApplication.run(Application.class, args);

@@ -1,25 +1,148 @@
-2022-12-14 20:07:22.904 [main] INFO  com.example.test.Application - starting
-2022-12-14 20:07:23.460 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 12232 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
-2022-12-14 20:07:23.461 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
-2022-12-14 20:07:25.208 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2022-12-14 20:07:25.218 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2022-12-14 20:07:25.219 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2022-12-14 20:07:25.219 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2022-12-14 20:07:25.328 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2022-12-14 20:07:25.328 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1806 ms
-2022-12-14 20:07:25.371 [main] INFO  com.example.test.config.ApplicationConfig - bizNameSet:[idmmaping, game, oppo, soloop]
-2022-12-14 20:07:25.391 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - start init idmapping redis cluster
-2022-12-14 20:07:25.404 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============id mapping redis:redis.clients.jedis.ShardedJedisPool@64711bf2 init success============
-2022-12-14 20:07:25.405 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============hidToAll redis:redis.clients.jedis.ShardedJedisPool@ceb4bd2 init success============
-2022-12-14 20:07:25.406 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============idToHid redis:redis.clients.jedis.ShardedJedisPool@56bc3fac init success============
-2022-12-14 20:07:25.406 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============openIdToHid redis:redis.clients.jedis.ShardedJedisPool@37ff4054 init success============
-2022-12-14 20:07:25.408 [main] INFO  com.bdp.idmapping.utils.ApplicationContextHolder - ApplicationContext holder init
-2022-12-14 20:07:25.519 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2022-12-14 20:07:25.706 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
-2022-12-14 20:07:25.754 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2022-12-14 20:07:25.786 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2022-12-14 20:07:25.798 [main] INFO  com.example.test.Application - Started Application in 2.774 seconds (JVM running for 3.775)
-2022-12-14 20:07:25.800 [main] INFO  com.example.test.Application - Server Start Success!
-2022-12-14 20:07:26.189 [shut-dowm] INFO  com.example.test.Application - Server Shutting Down...
-2022-12-14 20:07:26.280 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
-2022-12-14 20:07:26.281 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-27 16:38:44.247 [main] INFO  com.example.test.Application - starting
+2022-12-27 16:38:44.673 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 7704 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
+2022-12-27 16:38:44.673 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
+2022-12-27 16:38:45.220 [main] INFO  o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-27 16:39:54.384 [main] INFO  com.example.test.Application - starting
+2022-12-27 16:39:54.761 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 15324 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
+2022-12-27 16:39:54.762 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
+2022-12-27 16:39:55.259 [main] INFO  o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-27 16:39:55.263 [shut-dowm] INFO  com.example.test.Application - Server Shutting Down...
+2022-12-27 16:40:09.517 [main] INFO  com.example.test.Application - starting
+2022-12-27 16:40:09.884 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 2248 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
+2022-12-27 16:40:09.885 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
+2022-12-27 16:40:10.781 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-12-27 16:40:10.788 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-27 16:40:10.789 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-27 16:40:10.789 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2022-12-27 16:40:10.864 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-27 16:40:10.864 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 937 ms
+2022-12-27 16:40:10.884 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - start init idmapping redis cluster
+2022-12-27 16:40:10.894 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============id mapping redis:redis.clients.jedis.JedisPool@6c000e0c init success============
+2022-12-27 16:40:10.895 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============hidToAll redis:redis.clients.jedis.JedisPool@43d455c9 init success============
+2022-12-27 16:40:10.896 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============idToHid redis:redis.clients.jedis.JedisPool@40147317 init success============
+2022-12-27 16:40:10.896 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============openIdToHid redis:redis.clients.jedis.JedisPool@6f95cd51 init success============
+2022-12-27 16:40:10.900 [main] INFO  com.example.test.config.ApplicationConfig - bizNameSet:[idmmaping, game, oppo, soloop]
+2022-12-27 16:40:10.928 [main] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter initialized,authentication config
+2022-12-27 16:40:10.951 [main] INFO  com.bdp.idmapping.utils.ApplicationContextHolder - ApplicationContext holder init
+2022-12-27 16:40:11.057 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-27 16:40:11.187 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-27 16:40:11.189 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2022-12-27 16:40:11.190 [main] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter destroy!
+2022-12-27 16:40:11.201 [main] INFO  o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-27 16:40:11.212 [shut-dowm] INFO  com.example.test.Application - Server Shutting Down...
+2022-12-27 16:41:50.844 [main] INFO  com.example.test.Application - starting
+2022-12-27 16:41:51.213 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 15148 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
+2022-12-27 16:41:51.214 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
+2022-12-27 16:41:52.119 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-12-27 16:41:52.128 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-27 16:41:52.128 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-27 16:41:52.128 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2022-12-27 16:41:52.205 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-27 16:41:52.205 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 940 ms
+2022-12-27 16:41:52.225 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - start init idmapping redis cluster
+2022-12-27 16:41:52.235 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============id mapping redis:redis.clients.jedis.JedisPool@1bdbf9be init success============
+2022-12-27 16:41:52.236 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============hidToAll redis:redis.clients.jedis.JedisPool@5b69d40d init success============
+2022-12-27 16:41:52.237 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============idToHid redis:redis.clients.jedis.JedisPool@2516fc68 init success============
+2022-12-27 16:41:52.237 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============openIdToHid redis:redis.clients.jedis.JedisPool@72889280 init success============
+2022-12-27 16:41:52.241 [main] INFO  com.example.test.config.ApplicationConfig - bizNameSet:[idmmaping, game, oppo, soloop]
+2022-12-27 16:41:52.271 [main] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter initialized,authentication config
+2022-12-27 16:41:52.292 [main] INFO  com.bdp.idmapping.utils.ApplicationContextHolder - ApplicationContext holder init
+2022-12-27 16:41:52.407 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-27 16:41:52.540 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-27 16:41:52.564 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-12-27 16:41:52.583 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 16:41:52.594 [main] INFO  com.example.test.Application - Started Application in 1.665 seconds (JVM running for 2.397)
+2022-12-27 16:41:52.595 [main] INFO  com.example.test.Application - Server Start Success!
+2022-12-27 16:42:00.053 [shut-dowm] INFO  com.example.test.Application - Server Shutting Down...
+2022-12-27 16:42:00.133 [SpringContextShutdownHook] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter destroy!
+2022-12-27 16:42:00.140 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-27 16:42:00.140 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-27 17:01:38.197 [main] INFO  org.ehcache.core.EhcacheManager - Cache 'bar' created in EhcacheManager.
+2022-12-27 17:01:38.236 [main] INFO  o.ehcache.shadow.org.terracotta.offheapstore.paging.UpfrontAllocatingPageSource - Allocating 10.0MB in chunks
+2022-12-27 17:01:38.265 [main] INFO  org.ehcache.core.EhcacheManager - Cache 'foo' created in EhcacheManager.
+2022-12-27 17:01:38.266 [main] INFO  org.ehcache.core.EhcacheManager - Cache 'simpleCache' created in EhcacheManager.
+2022-12-27 21:46:20.921 [main] INFO  com.example.test.Application - starting
+2022-12-27 21:46:21.388 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 12320 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
+2022-12-27 21:46:21.389 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
+2022-12-27 21:46:22.347 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-12-27 21:46:22.355 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-27 21:46:22.355 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-27 21:46:22.356 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2022-12-27 21:46:22.437 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-27 21:46:22.437 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1001 ms
+2022-12-27 21:46:22.459 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - start init idmapping redis cluster
+2022-12-27 21:46:22.470 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============id mapping redis:redis.clients.jedis.JedisPool@109f5dd8 init success============
+2022-12-27 21:46:22.472 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============hidToAll redis:redis.clients.jedis.JedisPool@415e0bcb init success============
+2022-12-27 21:46:22.472 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============idToHid redis:redis.clients.jedis.JedisPool@2c30b71f init success============
+2022-12-27 21:46:22.473 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============openIdToHid redis:redis.clients.jedis.JedisPool@bf71cec init success============
+2022-12-27 21:46:22.477 [main] INFO  com.example.test.config.ApplicationConfig - bizNameSet:[idmmaping, game, oppo, soloop]
+2022-12-27 21:46:22.515 [main] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter initialized,authentication config
+2022-12-27 21:46:22.531 [main] INFO  com.bdp.idmapping.utils.ApplicationContextHolder - ApplicationContext holder init
+2022-12-27 21:46:22.640 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-27 21:46:22.779 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-27 21:46:22.781 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2022-12-27 21:46:22.782 [main] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter destroy!
+2022-12-27 21:46:22.795 [main] INFO  o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-27 21:46:22.807 [shut-dowm] INFO  com.example.test.Application - Server Shutting Down...
+2022-12-27 21:47:14.007 [main] INFO  com.example.test.Application - starting
+2022-12-27 21:47:14.390 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 3164 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
+2022-12-27 21:47:14.390 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
+2022-12-27 21:47:15.291 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-12-27 21:47:15.298 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-27 21:47:15.299 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-27 21:47:15.299 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2022-12-27 21:47:15.375 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-27 21:47:15.375 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 931 ms
+2022-12-27 21:47:15.394 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - start init idmapping redis cluster
+2022-12-27 21:47:15.404 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============id mapping redis:redis.clients.jedis.JedisPool@2d140a7 init success============
+2022-12-27 21:47:15.405 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============hidToAll redis:redis.clients.jedis.JedisPool@1d8e2eea init success============
+2022-12-27 21:47:15.406 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============idToHid redis:redis.clients.jedis.JedisPool@49298ce7 init success============
+2022-12-27 21:47:15.407 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============openIdToHid redis:redis.clients.jedis.JedisPool@503fbbc6 init success============
+2022-12-27 21:47:15.410 [main] INFO  com.example.test.config.ApplicationConfig - bizNameSet:[idmmaping, game, oppo, soloop]
+2022-12-27 21:47:15.443 [main] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter initialized,authentication config
+2022-12-27 21:47:15.458 [main] INFO  com.bdp.idmapping.utils.ApplicationContextHolder - ApplicationContext holder init
+2022-12-27 21:47:15.561 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-27 21:47:15.690 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-27 21:47:15.715 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-12-27 21:47:15.733 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 21:47:15.743 [main] INFO  com.example.test.Application - Started Application in 1.651 seconds (JVM running for 2.379)
+2022-12-27 21:47:15.744 [main] INFO  com.example.test.Application - Server Start Success!
+2022-12-27 21:47:24.856 [shut-dowm] INFO  com.example.test.Application - Server Shutting Down...
+2022-12-27 21:47:24.935 [SpringContextShutdownHook] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter destroy!
+2022-12-27 21:47:24.942 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-27 21:47:24.942 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-27 21:47:28.594 [main] INFO  com.example.test.Application - starting
+2022-12-27 21:47:28.956 [main] INFO  com.example.test.Application - Starting Application on WIN-CPJUVEKQHIE with PID 6268 (C:\Users\Administrator\Desktop\project\test\target\classes started by Administrator in C:\Users\Administrator\Desktop\project\test)
+2022-12-27 21:47:28.956 [main] INFO  com.example.test.Application - No active profile set, falling back to default profiles: default
+2022-12-27 21:47:29.838 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-12-27 21:47:29.845 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-27 21:47:29.846 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-27 21:47:29.846 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2022-12-27 21:47:29.922 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-27 21:47:29.922 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 925 ms
+2022-12-27 21:47:29.942 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - start init idmapping redis cluster
+2022-12-27 21:47:29.952 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============id mapping redis:redis.clients.jedis.JedisPool@41c89d2f init success============
+2022-12-27 21:47:29.953 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============hidToAll redis:redis.clients.jedis.JedisPool@1da6ee17 init success============
+2022-12-27 21:47:29.954 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============idToHid redis:redis.clients.jedis.JedisPool@5b69d40d init success============
+2022-12-27 21:47:29.954 [main] INFO  com.bdp.idmapping.jedis.JedisClusterUtil - ===============openIdToHid redis:redis.clients.jedis.JedisPool@2516fc68 init success============
+2022-12-27 21:47:29.958 [main] INFO  com.example.test.config.ApplicationConfig - bizNameSet:[idmmaping, game, oppo, soloop]
+2022-12-27 21:47:29.986 [main] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter initialized,authentication config
+2022-12-27 21:47:30.001 [main] INFO  com.bdp.idmapping.utils.ApplicationContextHolder - ApplicationContext holder init
+2022-12-27 21:47:30.104 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-27 21:47:30.238 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-27 21:47:30.265 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-12-27 21:47:30.285 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 21:47:30.295 [main] INFO  com.example.test.Application - Started Application in 1.617 seconds (JVM running for 2.353)
+2022-12-27 21:47:30.297 [main] INFO  com.example.test.Application - Server Start Success!
+2022-12-27 21:47:32.886 [shut-dowm] INFO  com.example.test.Application - Server Shutting Down...
+2022-12-27 21:47:32.965 [SpringContextShutdownHook] INFO  com.example.test.filter.AuthenticationFilter - AuthenticationFilter destroy!
+2022-12-27 21:47:32.972 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-27 21:47:32.972 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
